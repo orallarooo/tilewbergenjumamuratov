@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Tilewbergen Jumamuratov — Official Website of the Writer</title>
+  <!-- Google Fonts: elegant fonts for writer's portfolio -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fefcf7;
+      color: #1e1b1a;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Typography for artistic mood */
+    h1, h2, h3, .logo, .quote-text, .nav-links a, .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Header */
+    header {
+      background: #ffffffea;
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #e8e0d5;
+      padding: 16px 0;
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .logo h1 {
+      font-size: 1.9rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: #2c241e;
+    }
+    .logo p {
+      font-size: 0.8rem;
+      color: #7b6e62;
+      letter-spacing: 1px;
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #2c241e;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a:hover {
+      color: #b45f3b;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 1px;
+      background: #b45f3b;
+      transition: 0.2s;
+    }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero section — writer's business card */
+    .hero {
+      padding: 80px 0 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 48px;
+      justify-content: space-between;
+    }
+    .hero-content {
+      flex: 1;
+      min-width: 260px;
+    }
+    .hero-badge {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: #b45f3b;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-size: 3.8rem;
+      line-height: 1.2;
+      font-weight: 600;
+      margin-bottom: 24px;
+      color: #1e1b1a;
+    }
+    .hero-sub {
+      font-size: 1.2rem;
+      color: #4a3f38;
+      margin-bottom: 32px;
+      border-left: 3px solid #d6b17e;
+      padding-left: 20px;
+      font-style: italic;
+    }
+    .btn-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.25s ease;
+      font-family: 'Inter', sans-serif;
+    }
+    .btn-primary {
+      background: #2c241e;
+      color: #fff;
+      border: 1px solid #2c241e;
+    }
+    .btn-primary:hover {
+      background: #b45f3b;
+      border-color: #b45f3b;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+    .btn-outline {
+      border: 1px solid #2c241e;
+      color: #2c241e;
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: #2c241e;
+      color: white;
+      transform: translateY(-2px);
+    }
+    .hero-avatar {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+    }
+    .placeholder-avatar {
+      background: #e9e0d6;
+      border-radius: 60% 40% 50% 50% / 45% 40% 60% 55%;
+      width: 280px;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 25px 25px 35px rgba(0,0,0,0.03);
+      border: 1px solid #f1e9e0;
+    }
+    .placeholder-avatar i {
+      font-size: 100px;
+      color: #c8b49a;
+    }
+
+    /* Sections common */
+    .section {
+      padding: 80px 0;
+      border-bottom: 1px solid #ede4db;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-family: 'Cormorant Garamond', serif;
+      text-align: center;
+    }
+    .section-sub {
+      text-align: center;
+      color: #7b6e62;
+      max-width: 640px;
+      margin: 0 auto 56px auto;
+      font-size: 1rem;
+    }
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 40px;
+    }
+    .book-card {
+      background: white;
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0,0,0,0.03);
+      transition: 0.2s;
+      border: 1px solid #f0e8df;
+      text-align: center;
+    }
+    .book-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+      border-color: #e1d5c8;
+    }
+    .book-cover {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      background: #f8f2ea;
+      width: 90px;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .book-title {
+      font-size: 1.55rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      margin: 16px 0 8px;
+    }
+    .book-year {
+      font-size: 0.8rem;
+      color: #b4865b;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .book-desc {
+      font-size: 0.9rem;
+      color: #4b3f38;
+      margin-bottom: 20px;
+    }
+    .book-link {
+      font-weight: 500;
+      text-decoration: none;
+      color: #b45f3b;
+      font-size: 0.9rem;
+    }
+
+    /* Biography */
+    .bio-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+    }
+    .bio-text {
+      flex: 2;
+    }
+    .bio-text p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #2b2622;
+    }
+    .bio-sign {
+      margin-top: 24px;
+      font-style: italic;
+      border-left: 3px solid #d6b17e;
+      padding-left: 20px;
+      font-weight: 400;
+    }
+    .bio-img {
+      flex: 1;
+      background: #f2ebe2;
+      border-radius: 32px;
+      padding: 30px 20px;
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .bio-img i {
+      font-size: 100px;
+      color: #be9a78;
+    }
+    .bio-img p {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #6b5b4e;
+    }
+
+    .bio-img-box {
+      width: 220px;
+      height: 220px;
+      overflow: hidden;
+      border-radius: 50%;
+    }
+
+    /* Quote section */
+    .quote-section {
+      background: #f6f0ea;
+      margin: 40px 0;
+      border-radius: 60px;
+      padding: 64px 40px;
+      text-align: center;
+    }
+    .quote-icon {
+      font-size: 2.5rem;
+      color: #cbb291;
+      margin-bottom: 20px;
+    }
+    .quote-text {
+      font-size: 1.8rem;
+      font-style: italic;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.3;
+      font-weight: 500;
+    }
+    .quote-author {
+      margin-top: 24px;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+
+    /* Blog / News */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .blog-item {
+      background: white;
+      border-radius: 28px;
+      padding: 20px;
+      transition: all 0.2s;
+      border: 1px solid #f0e6de;
+    }
+    .blog-date {
+      font-size: 0.8rem;
+      color: #b6916f;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .blog-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      font-family: 'Cormorant Garamond', serif;
+      margin-bottom: 14px;
+    }
+    .blog-excerpt {
+      color: #4f423b;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    /* Contacts */
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      justify-content: center;
+      text-align: center;
+    }
+    .contact-card {
+      background: #ffffff;
+      padding: 32px 28px;
+      border-radius: 36px;
+      flex: 1;
+      min-width: 210px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+      border: 1px solid #ece1d8;
+    }
+    .contact-card i {
+      font-size: 2.3rem;
+      color: #b45f3b;
+      margin-bottom: 16px;
+    }
+    .contact-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .contact-card a, .contact-card p {
+      text-decoration: none;
+      color: #4f423b;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c241e;
+      color: #dfd3c8;
+      padding: 48px 0 24px;
+      text-align: center;
+    }
+    .footer-social a {
+      color: #dfd3c8;
+      margin: 0 12px;
+      font-size: 1.3rem;
+      transition: color 0.2s;
+      display: inline-block;
+    }
+    .footer-social a:hover {
+      color: #d6b17e;
+    }
+    .copyright {
+      margin-top: 32px;
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+    @media (max-width: 780px) {
+      .container {
+        padding: 0 24px;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      .quote-text {
+        font-size: 1.3rem;
+      }
+      .quote-section {
+        padding: 40px 20px;
+        border-radius: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container header-flex">
+    <div class="logo">
+      <h1>Tilewbergen Jumamuratov</h1>
+      <p>WRITER · ESSAYIST · STORYTELLER</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#bio">Biography</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#blog">Journal</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Hero with author introduction -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">✍️ CONTEMPORARY FICTION</div>
+        <h1 class="hero-title">Stories<br> that stay with you</h1>
+        <div class="hero-sub">“A writer is not someone who writes, but someone who sees the world differently. Welcome to my universe.”</div>
+        <div class="btn-group">
+          <a href="#books" class="btn btn-primary">Discover books</a>
+        </div>
+      </div>
+      <div class="hero-avatar">
+        <div class="placeholder-avatar">
+          <img src="./img/foto.jpg" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- BIOGRAPHY section (now first) -->
+    <section id="bio" class="section">
+      <h2 class="section-title">About the Author</h2>
+      <div class="bio-wrap">
+        <div class="bio-text">
+          <p>Tilewbergen Jumamuratov was born on December 27, 1915, in the village of Aqdarya, Russian Empire, into a peasant family. He became an orphan early and, thanks to his mother’s efforts, first studied at a madrasa, and later at an educational institution in the city of Aralsk in 1931–1932. In 1936–1937, he studied at teacher training courses in the city of To‘rtko‘l.</p>
+          <p>From a young age, Tilewbergen Jumamuratov wrote poetry. He was a poet with a gift for improvisation. He was one of the last improvisational poets who preserved the traditions of Karakalpak oral folklore. Tilewbergen Jumamuratov stood out for his unique style of expressive recitation, performing even his major works from memory.</p>
+          <p>"The world's a vast, unbounded sea. Though storms and grief I've met, <br>
+            I've weathered much — yet still no shore, no solid ground as yet."</p>
+          <div class="bio-sign">— Tilewbergen Jumamuratov</div>
+        </div>
+        <div class="bio-img">
+            <div class="bio-img-box">
+                <img src="./img/author_photo.jpg" alt="">
+            </div>
+          <p>Photo: author's archive</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKS section (now second) -->
+    <section id="books" class="section">
+      <h2 class="section-title">"Author's Books"</h2>
+      <div class="section-sub">Novels, short story collections and essays — for those seeking depth and true emotions.</div>
+      <div class="books-grid">
+        <div class="book-card">
+          <div class="book-cover"><i class="fas fa-book-open"></i></div>
+          <div class="book-title">Qirgʻiz doʻstlarimga</div>
+          <div class="book-year">2024</div>
+          <div class="book-desc">A poignant story of love, loss and the silence of the northern coast. Nominee of the Literary Express Award.</div>
+          <a href="#" class="book-link">Learn more →</a>
+        </div>
+        <div class="book-card">
+          <div class="book-cover"><i class="fas fa-moon"></i></div>
+          <div class="book-title">Ogʻir kunlar</div>
+          <div class="book-year">1977</div>
+          <div class="book-desc">A psychological drama with elements of magical realism. Longlisted for the Russian Booker Prize.</div>
+          <a href="#" class="book-link">Learn more →</a>
+        </div>
+        <div class="book-card">
+          <div class="book-cover"><i class="fas fa-tree"></i></div>
+          <div class="book-title">Muhabbat siri</div>
+          <div class="book-year">1958</div>
+          <div class="book-desc">A collection of short prose dedicated to memories of childhood and first losses. Translated into three languages.</div>
+          <a href="#" class="book-link">Learn more →</a>
+        </div>
+        <div class="book-card">
+          <div class="book-cover"><i class="fas fa-pen-fancy"></i></div>
+          <div class="book-title">„Qizlar hazili“</div>
+          <div class="book-year">1967</div>
+          <div class="book-desc">Ten stories about chance encounters that change destinies.</div>
+          <a href="#" class="book-link">Learn more →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspirational quote -->
+    <div class="quote-section">
+      <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+      <div class="quote-text">Words are strong when they are born from silence and lived through the heart.</div>
+      <div class="quote-author">— from Books & People magazine</div>
+    </div>
+
+    <!-- Literary journal / blog -->
+    <section id="blog" class="section">
+      <h2 class="section-title">Literary Journal</h2>
+      <div class="section-sub">Notes on creativity, reviews, reflections and news from the world of books.</div>
+      <div class="blog-grid">
+        <div class="blog-item">
+          <div class="blog-date"><i class="far fa-calendar-alt"></i> March 15, 2025</div>
+          <div class="blog-title">How Characters Are Born</div>
+          <div class="blog-excerpt">People often ask me where heroes come from. I talk about strange encounters on trains and the voices echoing in my head...</div>
+          <a href="#" class="book-link">Read the note →</a>
+        </div>
+        <div class="blog-item">
+          <div class="blog-date"><i class="far fa-calendar-alt"></i> February 2, 2025</div>
+          <div class="blog-title">Top 5 Books That Changed My Writing</div>
+          <div class="blog-excerpt">From Nabokov to Ulitskaya: five authors whose techniques influenced my style and approach to plot.</div>
+          <a href="#" class="book-link">Read the note →</a>
+        </div>
+        <div class="blog-item">
+          <div class="blog-date"><i class="far fa-calendar-alt"></i> January 10, 2025</div>
+          <div class="blog-title">New Novel: First Chapter</div>
+          <div class="blog-excerpt">Friends, I'm sharing a fragment of my future book "Threads of December". No spoilers, just the mood and rhythm.</div>
+          <a href="#" class="book-link">Read the excerpt →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacts and communication with the writer -->
+    <section id="contact" class="section" style="border-bottom: none;">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="section-sub">For questions about books, lectures, performances, or just to say thank you.</div>
+      <div class="contact-flex">
+        <div class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h4>Email</h4>
+          <a href="mailto:volnov.writer@example.com">nbisenbaevkarsu@gmail.com</a>
+          <p style="margin-top: 12px; font-size: 0.85rem;">I reply within a week</p>
+        </div>
+        <div class="contact-card">
+          <i class="fab fa-telegram-plane"></i>
+          <h4>Telegram</h4>
+          <a href="#">@b1senbaevnursultan</a>
+          <p style="margin-top: 12px; font-size: 0.85rem;">News and personal messages</p>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-pencil-alt"></i>
+          <h4>For Publishers</h4>
+          <p>karsu@gmail.com</p>
+          <p style="margin-top: 12px; font-size: 0.85rem;">Agency: Yosh Tarjimonlar</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-social">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+    </div>
+    <p style="margin-top: 28px;">© 2026 Bisenbaev Nursultan. All rights reserved.</p>
+    <p class="copyright">“A writer lives as long as their lines find an echo in someone’s heart”</p>
+  </div>
+</footer>
+
+<!-- smooth anchors -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === "#" || href === "") return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
