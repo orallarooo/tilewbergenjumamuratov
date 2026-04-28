@@ -201,20 +201,15 @@
     }
 
     .placeholder-avatar {
-      background: #e9e0d6;
-      border-radius: 60% 40% 50% 50% / 45% 40% 60% 55%;
-      width: 280px;
-      height: 280px;
+      width: 100%;
+      height: auto;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 25px 25px 35px rgba(0, 0, 0, 0.03);
-      border: 1px solid #f1e9e0;
     }
 
-    .placeholder-avatar i {
-      font-size: 100px;
-      color: #c8b49a;
+    .placeholder-avatar img {
+      height: 100%;
     }
 
     /* Sections common */
@@ -495,6 +490,14 @@
         padding: 0 24px;
       }
 
+      .hero {
+        flex-direction: column;
+      }
+
+      .placeholder-avatar img {
+        width: 100%;
+      }
+
       .hero-title {
         font-size: 2.5rem;
       }
@@ -592,7 +595,7 @@
             <div class="book-cover"><i class="fas fa-book-open"></i></div>
             <div class="book-title">The Secret of Love</div>
             <div class="book-year">1958</div>
-            <div class="book-desc"> 
+            <div class="book-desc">
               After getting off the plane and taking a break at my house,glad to be of service, I
               went to the
               council of the district party committee.</div>
