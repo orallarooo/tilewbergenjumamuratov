@@ -1,234 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Qirgʻiz doʻstlarimga — Tilewbergen Jumamuratov</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background-color: #fefcf7;
-      color: #1e1b1a;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-    }
-    h1, h2, h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 32px;
-    }
-    header {
-      background: #ffffffea;
-      backdrop-filter: blur(6px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid #e8e0d5;
-      padding: 16px 0;
-    }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: #2c241e;
-      font-weight: 500;
-      font-family: 'Inter', sans-serif;
-      transition: color 0.2s;
-    }
-    .back-link:hover {
-      color: #b45f3b;
-    }
-    .book-detail {
-      margin-top: 48px;
-      display: flex;
-      flex-direction: column; /* Изменено на column */
-      align-items: center;
-      text-align: center;
-    }
-    .book-cover-large {
-      width: 100%;
-      max-width: 400px;
-      background: #f2ebe2;
-      border-radius: 32px;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 6rem;
-      color: #be9a78;
-      margin-bottom: 48px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-    .book-info {
-      width: 100%;
-      max-width: 650px;
-    }
-    .book-info h1 {
-      font-size: 2.8rem;
-      margin-bottom: 12px;
-    }
-    .book-info .year {
-      color: #b4865b;
-      font-size: 1rem;
-      letter-spacing: 2px;
-      margin-bottom: 32px;
-      font-weight: 500;
-    }
-    .book-info .description {
-      font-size: 1.1rem;
-      margin-bottom: 40px;
-      line-height: 1.8;
-      color: #2b2622;
-      text-align: left; /* Текст описания остается выровненным по левому краю для читаемости */
-    }
-    .book-info .description p {
-      margin-bottom: 24px;
-    }
-    .book-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: center;
-      margin-bottom: 40px;
-      text-align: left;
-    }
-    .meta-item {
-      background: white;
-      padding: 16px 24px;
-      border-radius: 20px;
-      border: 1px solid #f0e8df;
-      min-width: 160px;
-    }
-    .meta-item .label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #b4865b;
-      margin-bottom: 4px;
-    }
-    .meta-item .value {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #2c241e;
-    }
-    .btn {
-      display: inline-block;
-      padding: 14px 36px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.25s ease;
-      font-family: 'Inter', sans-serif;
-      background: #2c241e;
-      color: #fff;
-      border: 1px solid #2c241e;
-      font-size: 1rem;
-    }
-    .btn:hover {
-      background: #b45f3b;
-      border-color: #b45f3b;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    }
-    .quote-block {
-      background: #f6f0ea;
-      border-radius: 24px;
-      padding: 32px;
-      margin: 48px 0;
-      font-style: italic;
-      border-left: 3px solid #d6b17e;
-      text-align: left;
-    }
-    .quote-block p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      line-height: 1.5;
-    }
-    @media (max-width: 780px) {
-      .container {
-        padding: 24px;
-      }
-      .book-info h1 {
-        font-size: 2.2rem;
-      }
-      .book-cover-large {
-        height: 300px;
-        font-size: 4rem;
-      }
-      .book-meta {
-        flex-direction: column;
-        align-items: stretch;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to main page</a>
-    </div>
-  </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Qirgʻiz doʻstlarimga — Tilewbergen Jumamuratov</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <main class="container">
-    <div class="book-detail">
-      <!-- Обложка книги -->
-      <div class="book-cover-large">
-        <i class="fas fa-book-open"></i>
-      </div>
-      
-      <!-- Информация о книге -->
-      <div class="book-info">
-        <h1>Qirgʻiz doʻstlarimga</h1>
-        <p class="year">Published in 2024</p>
+        body {
+            background-color: #fefcf7;
+            color: #1e1b1a;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+
+        header {
+            background: #ffffffea;
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e8e0d5;
+            padding: 16px 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #2c241e;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #b45f3b;
+        }
+
+        .book-detail {
+            margin-top: 48px;
+            display: flex;
+            flex-direction: column;
+            /* Изменено на column */
+            align-items: center;
+            text-align: center;
+        }
+
+        .book-cover-large {
+            width: 100%;
+            max-width: 400px;
+            background: #f2ebe2;
+            border-radius: 32px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            color: #be9a78;
+            margin-bottom: 48px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+        .book-cover-large img{
+                box-sizing: border-box;
+                background-size: cover;
+                height: 100%;
+        }
+
+        .book-info {
+            width: 100%;
+            max-width: 650px;
+        }
+
+        .book-info h1 {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+        }
+
+        .book-info .year {
+            color: #b4865b;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+
+        .book-info .description {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            color: #2b2622;
+            text-align: left;
+            /* Текст описания остается выровненным по левому краю для читаемости */
+        }
+
+        .book-info .description p {
+            margin-bottom: 24px;
+        }
+
+        .book-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .meta-item {
+            background: white;
+            padding: 16px 24px;
+            border-radius: 20px;
+            border: 1px solid #f0e8df;
+            min-width: 160px;
+        }
+
+        .meta-item .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #b4865b;
+            margin-bottom: 4px;
+        }
+
+        .meta-item .value {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2c241e;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.25s ease;
+            font-family: 'Inter', sans-serif;
+            background: #2c241e;
+            color: #fff;
+            border: 1px solid #2c241e;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #b45f3b;
+            border-color: #b45f3b;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-block {
+            background: #f6f0ea;
+            border-radius: 24px;
+            padding: 32px;
+            margin: 48px 0;
+            font-style: italic;
+            border-left: 3px solid #d6b17e;
+            text-align: left;
+        }
+
+        .quote-block p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            line-height: 1.5;
+        }
         
-        <div class="description">
-          <p>
-            A poignant story of love, loss and the silence of the northern coast. This novel takes the reader to the vast expanses of the Aral Sea region, where the fate of the main character intertwines with the history of an entire generation.
-          </p>
-          <p>
-            Through the eyes of the protagonist, we witness the complex relationships between Karakalpak and Kyrgyz peoples, bound by common history and cultural ties. The narrative is woven with subtle observations about human nature, the passage of time, and the unbreakable bonds of friendship that transcend borders and political changes.
-          </p>
-        </div>
 
-        <!-- Мета-информация -->
-        <div class="book-meta">
-          <div class="meta-item">
-            <div class="label">Genre</div>
-            <div class="value">Novel</div>
-          </div>
-          <div class="meta-item">
-            <div class="label">Pages</div>
-            <div class="value">342</div>
-          </div>
-          <div class="meta-item">
-            <div class="label">Language</div>
-            <div class="value">Karakalpak</div>
-          </div>
-          <div class="meta-item">
-            <div class="label">Award</div>
-            <div class="value">Literary Express Nominee</div>
-          </div>
-        </div>
+        @media (max-width: 780px) {
+            .container {
+                padding: 24px;
+            }
 
-        <!-- Цитата из книги -->
-        <div class="quote-block">
-          <p>"In the silence of the steppe, I heard the voices of my Kyrgyz friends — echoes of a friendship that time could not erase."</p>
-        </div>
+            .book-info h1 {
+                font-size: 2.2rem;
+            }
 
-        <a href="" class="btn">Order book</a>
-      </div>
-    </div>
-  </main>
+            .book-cover-large {
+                height: 300px;
+                font-size: 4rem;
+            }
+
+            
+
+            .book-meta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to main page</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="book-detail">
+            <!-- Обложка книги -->
+            <div class="book-cover-large">
+                <img src="./img/book-1.jpg">
+            </div>
+
+            <!-- Информация о книге -->
+            <div class="book-info">
+                <h1>The secret of love</h1>
+                <p class="year">Published in 1958</p>
+
+                <!-- Цитата из книги -->
+                <div class="quote-block">
+                    <p>
+                        "I realized then that there is a vast difference between the innocent friendship of childhood and love in the present moment. This feeling was getting into my soul."
+                    </p>
+                    <p>- A quote from book</p>
+                </div>
+
+                <div class="description">
+                    <p>
+                        After getting off the plane and taking a break at my house,glad to be of service, I went to the
+                        council of the district party committee. I asked permission to enter as I wanted to see the
+                        secretary.
+                        “Wait Comrade,You should enter after the guests left” said the young receptionist girl.And then
+                        they left the room and i got the permission to see the secretary before i even said “okay”
+                        After we shook hands he offered me a seat then introduced me as “Sakurov” I said mine was
+                        “Mamutov”.
+                        When I looked at him: he was well past fifty, tall, with a thick trimmed beard,
+                        fair-complexioned.He studied my face, my military decorations and medals, with a steady gaze.He
+                        looked somewhat familiar like I've seen him somewhere before but I couldn't quite recall and it
+                        was awkward to asking him.I mentioned that I had been working away from home though partly and
+                        told him I would be conducting research work, and that today I needed to visit the "Gulistan"
+                        collective farm in this district.Right now is a good time to find a car that goes there you
+                        should take that,I'll be going there on some unfinished business later today” he said
+                        “Okay then,thanks”
+                        Then the sound of a car was heard through the window.I suddenly turned around to see who it was
+                        after the door was opened.Some woman stepped out and entered the room with permission. She
+                        greeted us in Russian shaking hands with us both"At the 'Gulistan' collective farm," said the
+                        Secretary, addressing the girl, "one of the farmers has fallen seriously ill.Go there and help
+                        him. This gentleman who is in the same route as yours will also have a ride in your car.
+                        "Alright" said the girl.
+                    </p>
+                    <p>
+                        The Secretary gave her various briefings about the district's health situation. The girl placed
+                        her bag on her knees, looked attentively, and listened carefully to everything Sakurov was
+                        saying.
+                        She was a woman of medium-to-tall height, graceful and well-composed. Fair-skinned, dark-eyed,
+                        with chestnut hair. She wore a red blouse and a patterned skirt, her head uncovered, her hair
+                        simply and neatly pinned. On her wrist, a gold watch with four faces.When the girl's eyes met
+                        mine — just briefly, face to face — she struck me as uniquely charming. She was speaking fluent
+                        Russian, so I hadn't initially thought she might be Karakalpak. But looking at Comrade Sakurov's
+                        expression, I understood that she was the district's chief physician.
+                        "May we leave now?" said the girl, once the conversation had ended. "Yes, go ahead, good luck."
+                        The two of us left the office and walked to the car, where a driver around thirty-five years old
+                        was waiting for a fair young woman.
+                        "Give this lady a ride,Miss Sanem," said the girl, pointing at me, "we're going to the
+                        'Gulistan' collective farm."
+                        I then realized the woman was Karakalpak. I squeezed in beside her and sat down. After I got in,
+                        the driver addressing the girl:
+                        "My Lady, this young man suits you perfectly, people will say you two make a great couple..."
+                        The girl, embarrassed by this teasing, replied with a smile:
+                        "Come on now,miss,what are you sayin just drive."
+                        The car's cabin was cramped, but pleasant. We set off, passing through the outskirts of town and
+                        taking the open road toward the village.
+                    </p>
+                    <p>
+                        What a glorious summer scene. The beauty of the season was beyond words. Along both sides of the
+                        road, swift hares darted through the brush, and lovely girls could be spotted in the fields.
+                        Between the telegraph poles, rows of blue-flowered flax stretched on either side of the road. In
+                        scattered open plains, fields of cotton shimmered turquoise-green like a sea. In those places,
+                        the bustling workers going about their labor could be seen, their caravans of carts moving along
+                        the road throughout the day.
+                        As I admired the beauty of nature, I kept glancing at the pretty girl beside me. She too would
+                        steal glances at me from the corner of her eye. But the moment I looked directly at her, she
+                        would instantly turn away and answer my questions briefly, with a warm but guarded smile.
+                        "Where did you study?"
+                        "In Moscow."
+                        "When did you graduate?"
+                        "In 1948."
+                        "How long have you been here?"
+                        "About a month..."
+                        Then, after a brief silence between us:
+                        "You must be from out of town?" I said, half-jokingly.
+                        "No," she replied. She turned away slightly, redirecting the conversation:
+                        "Have you traveled this road before?"
+                        "Sixteen years ago. I spent my entire childhood in this village."
+                        "What was it like here back then?"
+                        "Along the road we're traveling now, there were no trees like these — it was just bare steppe
+                        and wilderness.”
+                    </p>
+                    <p>
+                        There were only scattered lone trees here and there. Now, from the looks of things, everything
+                        has burst into bloom.
+                        "In this day and age, sixteen years isn't a little — even one year brings great change," she
+                        said.
+                        At that moment the car turned off toward the village, and the girl unexpectedly reached out and
+                        grabbed my arm. She immediately pulled it back:
+                        "Forgive me!" she said.
+                        "No need to apologize,is it always this bumpy?" I asked. She smiled and looked down. If only she
+                        had kept hold of my arm I wouldn't have minded in the least if she had even embraced me. I felt
+                        a little ashamed for wanting that. In front of me, from time to time, I caught glimpses of the
+                        girl's own reflection in the windshield beside mine.
+                        "When you mention this area, where exactly do you mean?" she asked again, a while later.
+                        "We lived in the village up ahead," I said, lowering my voice a little. "We had some wonderful
+                        neighbors. There was a child named Gulbi, a truly wonderful girl neighbor of ours. Her father
+                        was a close friend of my father's. Gulbi was his only young daughter. They used to say: 'We'll
+                        betrothe her to you, and when she's old enough, she'll be your bride.' I felt terribly
+                        embarrassed by that when I was a child. One day, Gulbi fell ill and died when her daughter
+                        Ulmaken was just seven years old. I can still remember the poor girl's desperate weeping. But
+                        our families couldn't help her.One day, the kolkhoz party secretary and a Russian man named Ivan
+                        summoned that little girl to the office. I took her there myself.
+                        “Ulmeken,My darling” said the Secretary with a heavy demeanor as if he was talking with seniors.
+                    </p>
+                    <p>
+                        He gently stroked her wind-blown hair. “You aren't going to become an orphan. The government
+                        won't leave you without support and it will educate you. So we are sending you to a boarding
+                        school. How do you feel about that?...” The young girl answered in place of an answer she simply
+                        wept. Ivan, after thinking for a moment, said:
+                        "I'll go."
+                        "What a smart girl no one could compare to her!" said Ivan, kissing the girl on the forehead.
+                        That very day,my mother sent a bundle of clothes to Ulmeken. The next morning Ivan harnessed the
+                        cart, and they set off for the city. I went along to help carry the bags.On the outskirts of
+                        town there lived a man named Dosa,a sheep herder. He told the cart driver:
+                        "Sell my sheep and get Ulmekan some more clothes as well. The government provides for
+                        everything. Even so, do it for the sake of her late father's honor."
+                        After the cart left, the girl's eyes shone brightly inside the wagon, turning back again and
+                        again to look behind her as they went.We also moved away from that place. Because my father had
+                        been called up for national service in the republic.
+                        That was sixteen years ago, I said.The girl had been listening to my story, and now her
+                        expression changed.She fell deep in thought. "She must've hated my nonstop talking,” I thought.
+                        Then, after a long pause, she looked at me and asked:
+                        "Did you ever see that girl again?"
+                        "No, I never saw her.”
+                        "Would you recognize her if you saw her now?"
+                        "I might."
+                        "You think I might look like her? I am Ulmekan. You must be Aralbay himself. I recognized you
+                        only after you spoke.” There was nothing but pure gasp and surprise for a moment.I've grown even
+                        more fond of her than before .Her mother's memory might have rushed back or perhaps something
+                        else,her eyes filled with tears.She reached into her bag, took out a soft silk handkerchief, and
+                        pressed it to her eyes. My heart also started to beat faster.I realized then that there is a
+                        vast difference between the innocent friendship of childhood and love in the present moment.
+                        This feeling was getting into my soul.
+                        "Are your parents well?" she asked.
+                        "Yes, they live in Nokis."
+                        "Oh by the way,do you know Ivan?"
+                        "Now I do not,how could I know a guy I haven't seen" I said.
+                        "The Secretary who was sitting at the district committee back then turns out to be Ivan who sent
+                        me to school back then.I don't think he knows that I am Ulmeken.I intend to find the right
+                        moment to meet him and invite her to my home."
+                        "We should meet. I too had thought I recognized him somewhere earlier," I said.
+                    </p>
+                    <h2 style="color: #b45f3b">
+                        Coming soon...
+                    </h2>
+                </div>
+
+                <!-- Мета-информация -->
+                <div class="book-meta">
+                    <div class="meta-item">
+                        <div class="label">Genre</div>
+                        <div class="value">Story</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="label">Pages</div>
+                        <div class="value">25</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="label">Language</div>
+                        <div class="value">Karakalpak</div>
+                    </div>
+                    <!-- <div class="meta-item">
+                        <div class="label">Award</div>
+                        <div class="value">Literary Express Nominee</div>
+                    </div> -->
+                </div>
+
+                
+
+                <a href="" class="btn">Order book</a>
+            </div>
+        </div>
+    </main>
 </body>
+
 </html>
