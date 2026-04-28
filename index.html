@@ -222,6 +222,7 @@
       transition: 0.2s;
       border: 1px solid #f0e8df;
       text-align: center;
+      cursor: pointer; /* Добавлено для интерактивности */
     }
     .book-card:hover {
       transform: translateY(-6px);
@@ -452,6 +453,7 @@
     }
   </style>
 </head>
+
 <body>
 <header>
   <div class="container header-flex">
@@ -492,7 +494,7 @@
       <h2 class="section-title">About the Author</h2>
       <div class="bio-wrap">
         <div class="bio-text">
-          <p>Tilewbergen Jumamuratov was born on December 27, 1915, in the village of Aqdarya, Russian Empire, into a peasant family. He became an orphan early and, thanks to his mother’s efforts, first studied at a madrasa, and later at an educational institution in the city of Aralsk in 1931–1932. In 1936–1937, he studied at teacher training courses in the city of To‘rtko‘l.</p>
+          <p>Tilewbergen Jumamuratov was born on December 27, 1915, in the village of Aqdarya, Russian Empire, into a peasant family. He became an orphan early and, thanks to his mother's efforts, first studied at a madrasa, and later at an educational institution in the city of Aralsk in 1931–1932. In 1936–1937, he studied at teacher training courses in the city of To'rtko'l.</p>
           <p>From a young age, Tilewbergen Jumamuratov wrote poetry. He was a poet with a gift for improvisation. He was one of the last improvisational poets who preserved the traditions of Karakalpak oral folklore. Tilewbergen Jumamuratov stood out for his unique style of expressive recitation, performing even his major works from memory.</p>
           <p>"The world's a vast, unbounded sea. Though storms and grief I've met, <br>
             I've weathered much — yet still no shore, no solid ground as yet."</p>
@@ -512,33 +514,37 @@
       <h2 class="section-title">"Author's Books"</h2>
       <div class="section-sub">Novels, short story collections and essays — for those seeking depth and true emotions.</div>
       <div class="books-grid">
-        <div class="book-card">
+        <!-- Карточка 1 -->
+        <div class="book-card" onclick="window.location.href='book-qirgiz-dostlarimga.html'">
           <div class="book-cover"><i class="fas fa-book-open"></i></div>
           <div class="book-title">Qirgʻiz doʻstlarimga</div>
           <div class="book-year">2024</div>
           <div class="book-desc">A poignant story of love, loss and the silence of the northern coast. Nominee of the Literary Express Award.</div>
-          <a href="#" class="book-link">Learn more →</a>
+          <a href="book-qirgiz-dostlarimga.html" class="book-link">Learn more →</a>
         </div>
-        <div class="book-card">
+        <!-- Карточка 2 -->
+        <div class="book-card" onclick="window.location.href='book-ogir-kunlar.html'">
           <div class="book-cover"><i class="fas fa-moon"></i></div>
           <div class="book-title">Ogʻir kunlar</div>
           <div class="book-year">1977</div>
           <div class="book-desc">A psychological drama with elements of magical realism. Longlisted for the Russian Booker Prize.</div>
-          <a href="#" class="book-link">Learn more →</a>
+          <a href="book-ogir-kunlar.html" class="book-link">Learn more →</a>
         </div>
-        <div class="book-card">
+        <!-- Карточка 3 -->
+        <div class="book-card" onclick="window.location.href='book-muhabbat-siri.html'">
           <div class="book-cover"><i class="fas fa-tree"></i></div>
           <div class="book-title">Muhabbat siri</div>
           <div class="book-year">1958</div>
           <div class="book-desc">A collection of short prose dedicated to memories of childhood and first losses. Translated into three languages.</div>
-          <a href="#" class="book-link">Learn more →</a>
+          <a href="book-muhabbat-siri.html" class="book-link">Learn more →</a>
         </div>
-        <div class="book-card">
+        <!-- Карточка 4 -->
+        <div class="book-card" onclick="window.location.href='book-qizlar-hazili.html'">
           <div class="book-cover"><i class="fas fa-pen-fancy"></i></div>
           <div class="book-title">„Qizlar hazili“</div>
           <div class="book-year">1967</div>
           <div class="book-desc">Ten stories about chance encounters that change destinies.</div>
-          <a href="#" class="book-link">Learn more →</a>
+          <a href="book-qizlar-hazili.html" class="book-link">Learn more →</a>
         </div>
       </div>
     </section>
@@ -611,7 +617,7 @@
       <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
     </div>
     <p style="margin-top: 28px;">© 2026 Bisenbaev Nursultan. All rights reserved.</p>
-    <p class="copyright">“A writer lives as long as their lines find an echo in someone’s heart”</p>
+    <p class="copyright">“A writer lives as long as their lines find an echo in someone's heart”</p>
   </div>
 </footer>
 
